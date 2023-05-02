@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: facebrook-deployment
+  name: git-action-deployment
   labels:
-    app: facebrook
+    app: git-action
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: facebrook
+      app: git-action
   template:
     metadata:
       labels:
-        app: facebrook 
+        app: git-action 
     spec:
       containers:
-      - name: facebrook
-        image: fdjapi10/facebrook:main
+      - name: git-action
+        image: djilanick1/git-action:main
         ports:
         - containerPort: 16000
         
@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: facebrook-service
+  name: git-action-service
 spec:
   selector:
-    app: facebrook 
+    app: git-action 
   type: LoadBalancer
   ports:
   - protocol: TCP
