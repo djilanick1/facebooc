@@ -1,4 +1,4 @@
-# Facebrook_appv0
+# git-action
 
 Proof-of-concept Facebook clone in C.
 The only dependency is SQLite3.
@@ -21,28 +21,28 @@ sudo apt-get install -yq build-essential make libsqlite3-dev sqlite3
 
 # Build
 
-Using git, clone the repository with the URL above. Repository contains the source files written in C, along with a Makefile with targets such as "all", "run". Destination path should be /opt/facebooc.
+Using git, clone the repository with the URL above. Repository contains the source files written in C, along with a Makefile with targets such as "all", "run". Destination path should be /opt/git-action.
 Run the following command to compile the source code.make all
 
 ```bash
-cd facebooc
+cd git-action
 make all
 ```
 
 # Run 
 
-Launch app as bin/facebooc This will attach to port 16000
+Launch app as bin/git-action This will attach to port 16000
 
 
 ```bash
-cd facebooc
-bin/facebooc
+cd git-action
+bin/git-action
 ```
 
 
 
 Licensing
 ---------
-`Facebooc` is freely redistributable under the two-clause BSD License.
+`git-action` is freely redistributable under the two-clause BSD License.
 Use of this source code is governed by a BSD-style license that can be found
 in the `LICENSE` file.
