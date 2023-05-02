@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: facebrook-deployment
+  labels:
+    app: facebrook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: facebrook
+  template:
+    metadata:
+      labels:
+        app: facebrook 
+    spec:
+      containers:
+      - name: facebrook
+        image: fdjapi10/facebrook:main
+        ports:
+        - containerPort: 16000
+        
+        
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: facebrook-service
+spec:
+  selector:
+    app: facebrook 
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 16000
+    nodePort: 30110
